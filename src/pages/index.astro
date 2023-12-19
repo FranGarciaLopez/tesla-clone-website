@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Model3 from "../components/Model3.astro";
+---
+
+<Layout title="Tesla clone website.">
+	<LandingHeader />
+	<main class="snap-y snap-mandatory relative h-screen overflow-x-hidden">
+		<div class="snap-center">
+			<HeroSection />
+		</div>
+		<div class="snap-center">
+			<Model3 />
+		</div>
+		<div class="snap-center">
+			<HeroSection />
+		</div>
+		<div class="snap-center">
+			<HeroSection />
+		</div>
+	</main>
+</Layout>

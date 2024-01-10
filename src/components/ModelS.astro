@@ -2,7 +2,12 @@
 import Section from "./Section.astro";
 ---
 
-<Section title="Model 3" subtitle="" :showAnchor="true" color="white">
+<Section
+       title="Model S"
+       subtitle="Explorar inventario"
+       color="black"
+       :showAnchor="false"
+>
        <div class="flex justify-center gap-x-4" slot="footer">
               <a
                      class="bg-gray-600 text-sm rounded font-medium text-white px-12 py-2
@@ -22,16 +27,8 @@ import Section from "./Section.astro";
               width="110%"
               height="110%"
               slot="background"
-              src="/Model3.avif"
-              alt="tesla model 3"
+              src="/Model-S-homepage-desktop.avif"
+              alt="tesla model s"
               class="h-screen w-screen object-cover object-center"
        />
-
-       <a
-              class="text-sm p-5 underline transition-colors text-black"
-              href="#"
-              slot="footer-anchor"
-       >
-              Disponible con moves III
-       </a>
 </Section>

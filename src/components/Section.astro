@@ -2,6 +2,7 @@
 const { color, title, subtitle } = Astro.props;
 const textColor = `text-${color}`;
 ---
+
 <section
        class="landing-section bg-black h-screen w-screen text-center relative overflow-hidden"
        data-header-color={color}
@@ -23,16 +24,13 @@ const textColor = `text-${color}`;
                      class="flex flex-grow flex-nowrap flex-col justify-end pb-5"
               >
                      <div class="flex justify-center gap-x-4">
-                            <slot name="footer"></slot>
+                            <slot name="footer" />
                      </div>
-                     <a
-                            class={`text-sm p-5 underline treansition-colors ${textColor}`}
-                            href="#">Disponible con moves III</a
-                     >
+                     <slot name="footer-anchor"></slot>
               </footer>
        </div>
 
        <div class="absolute top-0 bottom-0 z-10">
-              <slot name="background"></slot>
+              <slot name="background" />
        </div>
 </section>

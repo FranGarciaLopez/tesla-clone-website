@@ -11,7 +11,7 @@ Tailwind CSS is used for styling.
 
 ## Getting Started
 
-1. Clone this repo
+1. Clone this repo 
 2. Run `npm install`
 3. Run `npm run dev`
 4. Open [http://localhost:port](http://localhost:port) with your browser to see the result.

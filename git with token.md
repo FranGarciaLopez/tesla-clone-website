@@ -1,0 +1,1 @@
+git remote add origin https://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@github.com/FranGarciaLopez/tesla-clone-website.git

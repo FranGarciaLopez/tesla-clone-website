@@ -1,0 +1,35 @@
+---
+export interface Content {
+          icon: string;
+          title: string;
+          description: string;
+}
+
+const { content } = Astro.props;
+---
+
+<section
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-14 py-6"
+>
+          {
+                    content.map((item) => (
+                              <div
+                                        class="pt-4 md:pt-8 lg:pt-12 xl:pt-16 
+                                        px-2 md:px-4 lg:px-6 xl:px-8 pb-2 md:pb-4 lg:pb-6 xl:pb-8
+                              rounded-lg bg-gray-100"
+                              >
+                                        <img
+                                                  src={item.icon}
+                                                  alt={item.title}
+                                                  class="w-14 h-14 pb-4"
+                                        />
+                                        <h2 class="text-start text-lg font-semibold md:text-2xl pb-2">
+                                                  {item.title}
+                                        </h2>
+                                        <h4 class="text-start text-sm transition-colors text-black">
+                                                  {item.description}
+                                        </h4>
+                              </div>
+                    ))
+          }
+</section>

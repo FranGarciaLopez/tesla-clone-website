@@ -1,43 +1,40 @@
 ---
+// Import the Section and ResponsiveImage components
 import Section from "./Section.astro";
+import ResponsiveImage from "./ResponsiveImage.astro";
 ---
 
 <Section
-       title="Model Y"
-       subtitle="Concretar una prueba de conducción"
+       title="Nuevo Model Y"
+       subtitle="Las entregas comienzan en marzo"
        color="white"
 >
        <div
-              class="flex flex-col w-full gap-y-2 px-10 xl:flex xl:flex-row xl:justify-center xl:gap-x-4"
+              class="max-w-xl flex flex-row w-full gap-2 px-10 xl:flex xl:flex-row xl:justify-center xl:gap-x-4"
               slot="footer"
        >
               <a
-                     class="bg-gray-600 text-sm rounded font-medium text-white px-12 py-2
-                     inline-flex hover:bg-black hover:text-white transition-colors justify-center items-center"
+                     class="bg-blue-600 text-xs rounded font-small text-white px-4 py-1
+       inline-flex hover:bg-blue-800 hover:text-white transition-colors justify-center items-center flex-1
+       md:px-12 md:py-2"
                      href="#"
-                     >Pedido personalizado
+              >
+                     Encargar
               </a>
               <a
-                     class="bg-white text-sm rounded font-medium text-black px-12 py-2
-                     hover:bg-black hover:text-white transition-colors inline-flex justify-center items-center"
-                     href="#"
-                     >Prueba de conducción
+                     class="bg-white text-xs rounded font-small text-black px-4 py-1
+       hover:bg-black hover:text-white transition-colors inline-flex justify-center items-center flex-1
+       md:px-12 md:py-2"
+                     href="/modely"
+              >
+                     Saber más
               </a>
        </div>
 
-       <video
+       <ResponsiveImage
               slot="background"
-              class="object-cover h-screen w-screen"
-              autoplay
-              muted
-              loop
-              src="/Homepage-Model-Y-Desktop-NA.mp4"></video>
-
-       <a
-              class="text-sm p-5 underline transition-colors text-white"
-              href="#"
-              slot="footer-anchor"
-       >
-              Disponible con moves III
-       </a>
+              desktopSrc="/Homepage-Model-Y-2-Desktop-EMEA-LHD.webp"
+              mobileSrc="/Homepage-Model-Y-2-Mobile-EMEA-LHD.webp"
+              altText="Model Y Hero"
+       />
 </Section>

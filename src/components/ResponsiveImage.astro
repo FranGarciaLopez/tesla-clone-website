@@ -1,0 +1,19 @@
+---
+const { desktopSrc, mobileSrc, altText, className = "" } = Astro.props;
+---
+
+<article class={`relative w-full h-full`}>
+          <!-- Show only on large screens (desktop) -->
+          <img
+                    class={`hidden md:block object-cover w-full h-full ${className}`}
+                    src={desktopSrc}
+                    alt={altText}
+          />
+
+          <!-- Show only on small screens (mobile) -->
+          <img
+                    class={`block md:hidden object-cover w-full h-full ${className}`}
+                    src={mobileSrc}
+                    alt={altText}
+          />
+</article>

@@ -1,0 +1,33 @@
+---
+export interface Stat {
+          value: string;
+          unit?: string;
+          description: string;
+}
+
+const { stats } = Astro.props;
+---
+
+<article
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-auto gap-4 p-4 md:p-8 lg:p-12 xl:p-16"
+>
+          {
+                    stats.map((stat) => (
+                              <div>
+                                        <h2 class="text-center text-2xl font-semibold md:text-4xl">
+                                                  {stat.value}
+                                                  {stat.unit && (
+                                                            <small class="text-sm">
+                                                                      {
+                                                                                stat.unit
+                                                                      }
+                                                            </small>
+                                                  )}
+                                        </h2>
+                                        <h4 class="text-center text-sm p-2 transition-colors text-black">
+                                                  {stat.description}
+                                        </h4>
+                              </div>
+                    ))
+          }
+</article>

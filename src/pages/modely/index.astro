@@ -1,0 +1,158 @@
+---
+import Section from "../../components/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import StatsGrid from "../../components/StatsGrid.astro";
+import ResponsiveImage from "../../components/ResponsiveImage.astro";
+import Carousel from "../../components/Carousel.astro";
+import GridSectionCard from "../../components/GridSectionCard.astro";
+
+const stats = [
+          { value: "568", unit: "km", description: "Autonomía (WLTP)" },
+          { value: "266", unit: "km", description: "Carga en 15 minutos" },
+          { value: "AWD", description: "Motor dual" },
+];
+
+const updates = [
+          {
+                    icon: "/sound.svg",
+                    title: "Sonido envolvente",
+                    description: "Entre, cierre la puerta y experimente el silencio que ofrece el cristal acústico especialmente diseñado. Ponga en cola sus canciones favoritas y escúchelas mientras la cabina se convierte en su propio estudio de sonido privado.",
+          },
+          {
+                    icon: "/seat.svg",
+                    title: "Comodidad en cualquier asiento",
+                    description: "Las pantallas táctiles delantera y trasera ponen todos los ajustes de la climatización y el entretenimiento al alcance de la mano. Los asientos calefactados y ventilados, la reclinación eléctrica y los tejidos suaves al tacto proporcionan una mayor comodidad.",
+          },
+          {
+                    icon: "/wifi.svg",
+                    title: "Aún más conectado",
+                    description: "Las llamadas se escuchan con total claridad. Los datos se descargan rápidamente. Las puertas y los maleteros se desbloquean al acercarse. La conectividad mejorada y el alcance de la señal le mantienen sincronizado con su vehículo. La función Bluetooth ofrece opciones de entretenimiento para los pasajeros.",
+          },
+];
+---
+
+<Layout title="Model Y">
+          <Section
+                    title="Nuevo Model Y"
+                    subtitle="Las entregas comienzan en marzo"
+                    color="white"
+          >
+                    <div
+                              class="max-w-xl flex flex-row justify-center w-full gap-2 px-8 xl:flex xl:flex-row xl:justify-center xl:gap-x-4"
+                              slot="footer"
+                    >
+                              <a
+                                        class="bg-blue-600 text-xs rounded font-small text-white px-4 py-2 flex-1
+                      inline-flex hover:bg-blue-800 hover:text-white transition-colors justify-center items-center
+                      md:px-4 md:py-2"
+                                        href="#"
+                              >
+                                        Encargar
+                              </a>
+                              <a
+                                        class="bg-white text-xs rounded font-small text-black px-4 py-2 flex-1
+                      hover:bg-black hover:text-white transition-colors inline-flex justify-center items-center
+                      md:px-12 md:py-2"
+                                        href="/modely"
+                              >
+                                        Comparar modelos
+                              </a>
+                    </div>
+
+                    <!-- div tablet, mobile -->
+
+                    <div
+                              slot="background"
+                              class="relative w-full h-full overflow-hidden"
+                    >
+                              <!-- Show only on large screens (desktop) -->
+                              <img
+                                        class="hidden md:block object-cover w-full h-full"
+                                        src="/Model-Y-2-Hero-Desktop.avif"
+                                        alt="Model Y Desktop"
+                              />
+
+                              <!-- Show only on small screens (mobile) -->
+                              <img
+                                        class="block md:hidden object-cover w-full h-full"
+                                        src="/Model-Y-2-Hero-Mobile.avif"
+                                        alt="Model Y Mobile"
+                              />
+                    </div>
+          </Section>
+
+          <section>
+                    <StatsGrid stats={stats} />
+
+                    <ResponsiveImage
+                              desktopSrc="/Model-Y-2-Redesigned-Desktop.avif"
+                              mobileSrc="/Model-Y-2-Redesigned-Mobile.avif"
+                              altText="Model Y Redesigned"
+                              className="p-6 rounded-lg"
+                    />
+
+                    <h2 class="text-start text-4xl font-semibold px-14 py-6">
+                              Rediseñado de principio a fin
+                    </h2>
+
+                    <h3 class="text-start text-sm px-14 pb-6">
+                              Desde el paragolpes delantero hasta la luz
+                              trasera, el exterior se ha rediseñado por completo
+                              para alcanzar la máxima eficiencia y toda la
+                              autonomía en cada carga. Con la suspensión, las
+                              llantas y los neumáticos mejorados, la conducción
+                              es aún más suave y silenciosa.
+                    </h3>
+
+                    <Carousel />
+
+                    <video
+                              class="w-full h-full px-6 pb-10 pt-40"
+                              src="/Model-Y-2-Starship-Desktop.webm"
+                              autoplay
+                    >
+                    </video>
+
+                    <h2 class="text-start text-4xl font-semibold px-14 py-6">
+                              Interior totalmente renovado
+                    </h2>
+
+                    <GridSectionCard content={updates} />
+
+                    <video
+                              class="w-full h-full rounded-lg px-6 pb-10 pt-40"
+                              src="/Model-Y-2-Storage-Desktop.webm"
+                              autoplay></video>
+
+                    <h2 class="text-start text-4xl font-semibold px-14 py-6">
+                              Amplio almacenamiento
+                    </h2>
+
+                    <h3 class="text-start text-sm px-14 pb-6">
+                              Pliegue los asientos de la segunda fila
+                              reclinándolos eléctricamente para ampliar el
+                              espacio del maletero hasta un total de 2130+
+                              litros de almacenamiento. El maletero manos libres
+                              se abre automáticamente al acercarse para que
+                              pueda guardar fácilmente todo su equipaje.
+                    </h3>
+
+                    <h2
+                              class="text-start text-4xl font-semibold px-14 pt-40 pb-6"
+                    >
+                              Funciones que no dejan de mejorar
+                    </h2>
+
+                    <h3 class="text-start text-sm px-14 pb-6">
+                              Sus películas, canciones y juegos favoritos,
+                              accesibles desde cualquier asiento. Una pantalla
+                              táctil mejorada de 15,4" con gran capacidad de
+                              respuesta se convierte en el centro de su
+                              experiencia de conducción, mientras que los
+                              pasajeros de la segunda fila cuentan una pantalla
+                              táctil de 8". Con las actualizaciones
+                              inalámbricas, siempre podrá disfrutar de las
+                              funciones más recientes.
+                    </h3>
+          </section>
+</Layout>

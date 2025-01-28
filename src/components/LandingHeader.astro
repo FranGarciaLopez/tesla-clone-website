@@ -16,7 +16,6 @@ import Logo from "../components/Logo.astro";
 	>
 		Menú
 	</button>
-
 	<nav
 		id="primary-menu"
 		class="fixed top-0 hidden h-full w-full bg-white z-50 text-xs xl:relative xl:block xl:h-auto xl:bg-transparent xl:z-auto xl:flex xl:flex-grow xl:justify-center xl:px-4 xl:py-2"
@@ -33,11 +32,7 @@ import Logo from "../components/Logo.astro";
 		>
 			<li>
 				<a href="#">Vehículos</a>
-				<div class="hover:w-screen hover:h-[50%]">
-					<article class="grid grid-col-3">
-
-					</article>
-				</div>
+				<!-- dropdown half screen -->
 			</li>
 			<li>
 				<a href="#">Energía</a>
@@ -59,7 +54,7 @@ import Logo from "../components/Logo.astro";
 		class="fixed top-0 left-0 hidden h-full w-full bg-white z-50 xl:static xl:h-auto xl:w-auto xl:bg-transparent xl:z-auto xl:flex xl:flex-grow xl:justify-end xl:px-4 xl:py-2"
 	>
 		<ul
-			class="flex flex-col items-end justify-end h-full text-black xl:flex xl:flex-row xl:basis-0 xl:space-around xl:text-xs xl:text-current [&>li>a]:transition-colors [&>li>a]:duration-200 [&>li>a]:inline-block text-center [&>li>a]:px-4 py-2"
+			class="flex flex-col items-center justify-center h-full text-black xl:flex xl:flex-row xl:basis-0 xl:space-around xl:text-xs xl:text-current [&>li>a]:transition-colors [&>li>a]:duration-200 [&>li>a]:inline-flex [&>li>a]:items-center text-center [&>li>a]:px-4 py-2"
 		>
 			<li>
 				<a href="#"

@@ -4,39 +4,42 @@ const { color } = Astro.props;
 const textColor = `text-${color}`;
 ---
 
-<Section title="Model X" subtitle="Explorar inventario" color="black">
+<Section title="Model X" subtitle="" color="white">
        <div
-       class="flex flex-col w-full gap-y-2 px-10 xl:flex xl:flex-row xl:justify-center xl:gap-x-4"
-       slot="footer"
->
-       <a
-              class="bg-gray-600 text-sm rounded font-medium text-white px-12 py-2
-       inline-flex hover:bg-black hover:text-white transition-colors justify-center items-center"
-              href="#"
-              >Pedido personalizado
-       </a>
-       <a
-              class="bg-white text-sm rounded font-medium text-black px-12 py-2
-       hover:bg-black hover:text-white transition-colors inline-flex justify-center items-center"
-              href="#"
-              >Prueba de conducción
-       </a>
-</div>
-
-       <img
-              width="110%"
-              height="110%"
-              slot="background"
-              src="/Homepage-Model-X-Desktop-LHD.avif"
-              alt="tesla model 3"
-              class="h-screen w-screen object-cover object-center"
-       />
-
-       <a
-              class={`${textColor} text-sm p-5 underline transition-colors`}
-              href="#"
-              slot="footer-anchor"
+              class="max-w-xl flex flex-row w-full gap-2 px-10 justify-end justify-end flex-grow"
+              slot="footer"
        >
-              Disponible con moves III
-       </a>
+              <a
+                     class="bg-blue-600 text-xs rounded font-small text-white px-4 py-1
+                     inline-flex hover:bg-blue-800 hover:text-white transition-colors justify-center items-center flex-1
+                     md:px-12 md:py-2"
+                     href="#"
+              >
+                     Encargar
+              </a>
+              <a
+                     class="bg-white text-xs rounded font-small text-black px-4 py-1
+                     hover:bg-black hover:text-white transition-colors inline-flex justify-center items-center flex-1
+                     md:px-12 md:py-2"
+                     href="#"
+              >
+                     Prueba de conducción
+              </a>
+       </div>
+
+       <div slot="background" class="relative w-full h-full">
+              <!-- Show only on large screens (desktop) -->
+              <img
+                     class="hidden md:block object-cover w-full h-full"
+                     src="/Homepage-Model-X-Desktop-US.avif"
+                     alt="Model Y Desktop"
+              />
+
+              <!-- Show only on small screens (mobile) -->
+              <img
+                     class="block md:hidden object-cover w-full h-full"
+                     src="/Homepage-Model-X-Mobile-US.avif"
+                     alt="Model Y Mobile"
+              />
+       </div>
 </Section>

@@ -1,0 +1,166 @@
+<div
+    id="indicators-carousel"
+    class="relative w-full p-6"
+    data-carousel="static"
+>
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <!-- Item 1 -->
+        <div class="carousel-item duration-700 ease-in-out active">
+            <img
+                src="/img-1.avif"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="Image 1"
+            />
+            <div
+                class="absolute inset-0 flex flex-col items-start justify-center text-white bg-black/50"
+            >
+                <h2 class="text-2xl font-bold px-16 pb-4">
+                    Aún más silencioso
+                </h2>
+                <p class="mt-2 text-lg px-16">
+                    Un paquete actualizado de llantas y neumáticos ofrece una
+                    experiencia de conducción más suave. La nueva fundición de
+                    la carrocería ha permitido reducir el número de piezas de 70
+                    a 1, lo que minimiza las holguras. Todo para favorecer una
+                    conducción más silenciosa.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="carousel-item duration-700 ease-in-out">
+            <img
+                src="/img-2.avif"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="Image 2"
+            />
+            <div
+                class="absolute inset-0 flex flex-col items-start justify-center text-white bg-black/50"
+            >
+                <h2 class="text-2xl font-bold px-16 pb-4">Más eficiente</h2>
+                <p class="mt-2 text-lg px-16">
+                    Rediseñado para mejorar la autonomía, el rendimiento y la
+                    longevidad.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="carousel-item duration-700 ease-in-out">
+            <img
+                src="/img-3.avif"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="Image 3"
+            />
+            <div
+                class="absolute inset-0 flex flex-col items-start justify-center text-white bg-black/50"
+            >
+                <h2 class="text-2xl font-bold px-16 pb-4">
+                    Iluminación distintiva
+                </h2>
+                <p class="mt-2 text-lg px-16">
+                    Nuestra luz transversal individual es la primera luz trasera
+                    del panel de la carrocería con reflexión indirecta del
+                    mundo.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider controls -->
+    <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+    >
+        <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+            <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+                aria-hidden="true"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+    >
+        <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+            <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+                aria-hidden="true"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
+<style>
+    .carousel-item {
+        display: none;
+    }
+    .carousel-item.active {
+        display: block;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousel = document.querySelector('[data-carousel="static"]');
+        const carouselItems = carousel.querySelectorAll(".carousel-item");
+
+        let current = 0;
+
+        const updateCarousel = (index) => {
+            // Hide all items
+            carouselItems.forEach((item) => item.classList.remove("active"));
+
+            // Show the target item
+            carouselItems[index].classList.add("active");
+        };
+
+        const showNext = () => {
+            current = (current + 1) % carouselItems.length;
+            updateCarousel(current);
+        };
+
+        const showPrev = () => {
+            current =
+                (current - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel(current);
+        };
+
+        document
+            .querySelector("[data-carousel-next]")
+            .addEventListener("click", showNext);
+        document
+            .querySelector("[data-carousel-prev]")
+            .addEventListener("click", showPrev);
+    });
+</script>
